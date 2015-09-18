@@ -26,7 +26,7 @@ for testing & debugging:
 mocha
 chai
 debugger
-
+jshint.com
 
 
 
