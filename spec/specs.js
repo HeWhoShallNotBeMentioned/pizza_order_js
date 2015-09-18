@@ -6,8 +6,8 @@ describe('Pizza', function(){
     expect(testPizza.size).to.equal("Medium");
   });
 
-  // it('it determines the cost of the ticket', function(){
-  //   var testTicket =  new Ticket("first-run", "matinee", "child");
-  //   expect(testTicket.cost()).to.equal(7);
-  // });
+  it('it determines the cost of the pizza order', function(){
+    var testPizza =  new Pizza(3, 4, "Medium");
+    expect(testPizza.cost()).to.equal(60);
+  });
 });
