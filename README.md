@@ -1,12 +1,12 @@
 # _Pizza_Order_
 
-##### _User selects a movie, time, and their age, and the site returns the ticket price. 9/15/2015_
+##### _User selects pizza order by quantity, toppings, and size, and the site returns the total order price. 9/18/2015_
 
-#### By _**Chris Underwood, Alex Altieri**_
+#### By _**Chris Underwood**_
 
 ## Description
 
-Users select a movie to see, a show time, and an age. Based on these selections they will get their ticket price.
+User selects pizza order by quantity, toppings, and size, and the site returns the total order price.
 
 
 ## Setup
@@ -16,16 +16,24 @@ Download the file and run the movie-tickets.html in a web browser.
 ## Technologies Used
 
 javascript v 5
-jquery
+jquery 2.1.4
 html5
 css3
+boostrap-cdn
+
+
+for testing & debugging:
+mocha
+chai
+debugger
+
 
 
 
 ### Legal
 
 
-Copyright (c) 2015 **_Chris Underwood, Alex Altieri_**
+Copyright (c) 2015 **_Chris Underwood_**
 
 This software is licensed under the MIT license.
 
