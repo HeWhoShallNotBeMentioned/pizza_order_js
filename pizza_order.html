@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery-2.1.4.js"></script>
+    <script src="js/scripts.js"></script>
+    <title>Movie Tickets</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+        <h2>Select Details and Purchase Ticket</h2>
+        <form id="ticket-select">
+          <div class="form-group">
+            <p>Select Movie</p>
+            <input type="radio" name="movie" id="Star Wars" value="first-run">Star Wars
+            <input type="radio" name="movie" id="Jaws" value="regular">Jaws
+            <input type="radio" name="movie" id="Titanic" value="first-run">Titanic
+            <input type="radio" name="movie" id="Harry Potter" value="first-run">Harry Potter
+          </div>
+
+          <div class="form-group">
+            <p>Time of Day</p>
+            <input type="radio" name="time-of-day" value="matinee">Matinee
+            <input type="radio" name="time-of-day" value="regular">Regular
+          </div>
+
+          <div class="form-group">
+            <p>Age</p>
+            <input type="radio" name="age" value="child">Child
+            <input type="radio" name="age" value="adult">Adult
+            <input type="radio" name="age" value="senior">Senior
+          </div>
+
+          <button type="submit" class="btn btn-primary active">Purchase Ticket</button>
+        </form>
+      </div>
+
+      <div class="ticket-show">
+        <span class="new-ticket"></span>
+        <p>$<span class="ticket-cost"></span></p>
+      </div>
+
+    </div>
+  </body>
+</html>
