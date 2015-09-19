@@ -27,7 +27,7 @@ mocha
 chai
 debugger
 jshint.com
-
+Chrome Dev Tools
 
 
 ### Legal
