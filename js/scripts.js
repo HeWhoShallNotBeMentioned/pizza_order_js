@@ -6,16 +6,21 @@ function Pizza(inputtedQuantity, inputtedToppings, inputtedSize) {
 
 Pizza.prototype.cost = function() {
     var cost = 9;
-    var toppingsNumber = this.inputtedToppings.length;
+    var toppingArray = this.toppings.split(" ");
 
-    cost = cost + (toppingsNumber * 2);
-
-    if (this.size === "Small" ) {
+    //toppings cost
+    if (toppingArray == "") {
+      cost = cost
+    } else {
+      cost = cost + (toppingArray.length * 2);
+    }
+    
+    if (this.size === "small" ) {
       cost = cost;
-    } else if (this.size === "Medium") {
+    } else if (this.size === "medium") {
       cost = cost + 3;
     } else {
-      cost = cost + 3;
+      cost = cost + 6;
     }
     cost =  this.quantity * cost;
 
@@ -28,18 +33,17 @@ $(document).ready(function() {
   $("form#pizza-select").submit(function(event) {
     event.preventDefault();
 
-    var inputtedToppings =[];
-    var inputtedSize = $("input[name=Size]").val();
-    var inputtedQuantity = parseInt($("textarea#quantity").val());
-    var newPizza = new Pizza(inputtedToppings, inputtedSize, inputtedQuantity);
+    var inputtedToppings = $("input#toppings").val();
+    var inputtedSize = $("input[name=size]:checked").val();
+    var inputtedQuantity = parseInt($("input#quantity").val());
+    var newPizza = new Pizza(inputtedQuantity,inputtedToppings, inputtedSize);
 
-    $.each($("input[name='Toppings']:checked"), function(){
-        inputtedToppings.push($(this).val());
-    });
+
+
 
     $(".pizza-show").show();
 
-    $(".new-pizza").append("Quantity:  " + inputtedQuantity  + "</br> Toppings: " + "</br>" + inputtedToppings.join(", ") + "</br> Size: " + inputtedSize);
+    $(".new-pizza").append("Quantity:  " + inputtedQuantity  + "</br> Toppings: " + "</br>"  + "</br> Size: " + inputtedSize);
     $(".pizza-cost").text(newPizza.cost());
 
   });
