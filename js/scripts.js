@@ -36,8 +36,8 @@ $(document).ready(function() {
     var newTicket = new Ticket(inputtedMovie, inputtedTimeOfDay, inputtedAge);
     $(".ticket-show").show();
 
-    $(".new-ticket").append("Movie Title: " + inputtedMovieTitle + "</br> Time of Day: " + newTicket.timeOfDay + "</br> Age: " + newTicket.age);
-    $(".ticket-cost").text(newTicket.cost());
+    $(".new-pizza").append("Quantity:  " + inputtedQuantity  + "</br> Number of Toppings: " + newTicket.timeOfDay + "</br> Size: " + inputtedSize);
+    $(".pizza-cost").text(newPizza.cost());
 
   });
 
