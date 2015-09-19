@@ -14,7 +14,7 @@ Pizza.prototype.cost = function() {
     } else {
       cost = cost + (toppingArray.length * 2);
     }
-    
+
     if (this.size === "small" ) {
       cost = cost;
     } else if (this.size === "medium") {
@@ -42,8 +42,8 @@ $(document).ready(function() {
 
 
     $(".pizza-show").show();
-
-    $(".new-pizza").append("Quantity:  " + inputtedQuantity  + "</br> Toppings: " + "</br>"  + "</br> Size: " + inputtedSize);
+debugger
+    $(".new-pizza").append("Quantity:  " + inputtedQuantity  + "</br> Toppings: " + inputtedToppings + "</br>" + "Size: " + inputtedSize);
     $(".pizza-cost").text(newPizza.cost());
 
   });
