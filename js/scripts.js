@@ -1,12 +1,12 @@
-function Pizza(quantity, toppings, size) {
-  this.quantity = quantity;
-  this.toppings = toppings;
-  this.size = size;
+function Pizza(inputtedQuantity, inputtedToppings, inputtedSize) {
+  this.quantity = inputtedQuantity;
+  this.toppings = inputtedToppings;
+  this.size = inputtedSize;
 }
 
 Pizza.prototype.cost = function() {
     var cost = 9;
-    var toppingsNumber = this.toppings.length;
+    var toppingsNumber = this.inputtedToppings.length;
 
     cost = cost + (toppingsNumber * 2);
 
@@ -28,15 +28,18 @@ $(document).ready(function() {
   $("form#pizza-select").submit(function(event) {
     event.preventDefault();
 
-    var inputtedMovie = $("input[name=movie]:checked").val();
-    var inputtedMovieTitle = $("input[id]:checked").val();
-    var inputtedTimeOfDay = $("input[name=time-of-day]:checked").val();
-    var inputtedAge = $("input[name=age]:checked").val();
+    var inputtedToppings =[];
+    var inputtedSize = $("input[name=Size]").val();
+    var inputtedQuantity = parseInt($("textarea#quantity").val());
+    var newPizza = new Pizza(inputtedToppings, inputtedSize, inputtedQuantity);
 
-    var newTicket = new Ticket(inputtedMovie, inputtedTimeOfDay, inputtedAge);
-    $(".ticket-show").show();
+    $.each($("input[name='Toppings']:checked"), function(){
+        inputtedToppings.push($(this).val());
+    });
 
-    $(".new-pizza").append("Quantity:  " + inputtedQuantity  + "</br> Number of Toppings: " + newTicket.timeOfDay + "</br> Size: " + inputtedSize);
+    $(".pizza-show").show();
+
+    $(".new-pizza").append("Quantity:  " + inputtedQuantity  + "</br> Toppings: " + "</br>" + inputtedToppings.join(", ") + "</br> Size: " + inputtedSize);
     $(".pizza-cost").text(newPizza.cost());
 
   });
